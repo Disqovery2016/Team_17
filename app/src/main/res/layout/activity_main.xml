@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.retrologin.MainActivity">
+    tools:context=".MainActivity">
     <TextView
         android:id="@+id/login_email"
         android:layout_width="wrap_content"
@@ -20,4 +20,11 @@
         android:gravity="center|center_horizontal"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
+    <Button android:id="@+id/btnShowLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Location"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
