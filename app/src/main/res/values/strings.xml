@@ -17,6 +17,7 @@
     <string name="registration_failed">Your email or password is already in use</string>
     <string-array name="autocomplete">
         <item>example@gmail.com</item>
-    </string-array>    <string name="gcm_senderid">107465190208</string>
+    </string-array>
+    <string name="gcm_senderid">107465190208</string>
 
 </resources>
