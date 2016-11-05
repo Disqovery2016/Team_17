@@ -1,13 +1,8 @@
 package tech.team17;
 
 import android.content.Intent;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -49,8 +44,8 @@ public class BusListActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Launch the detail view passing book as an extra
-                Intent intent = new Intent(BusListActivity.this, BusDetailActivity.class);
-                intent.putExtra(BUS_DETAIL_KEY, busAdapter.getItem(position));
+                Intent intent = new Intent(BusListActivity.this, BusDetailsActivity.class);
+                intent.putExtra(Bus_DETAIL_KEY, busAdapter.getItem(position));
                 startActivity(intent);
             }
         });
@@ -77,8 +72,8 @@ public class BusListActivity extends ActionBarActivity {
                         // Remove all books from the adapter
                         busAdapter.clear();
                         // Load model objects into the adapter
-                        for (Bus book : bus) {
-                            busAdapter.add(bus); // add book through the adapter
+                        for (Bus bus1 : bus) {
+                            busAdapter.add(bus1); // add book through the adapter
                         }
                         busAdapter.notifyDataSetChanged();
                     }
