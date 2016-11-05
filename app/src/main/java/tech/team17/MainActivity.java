@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG = "MainActivity" ;
-    Button btnShowLocation;
+    Button btnShowLocation, listButton;
 
     // GPSTracker class
     GPSTracker gps;
@@ -32,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listButton=(Button)findViewById(R.id.button2);
+        listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent b = new Intent(MainActivity.this, BusListActivity.class);
+                startActivity(b);
+            }
+        });
+
         String myLoginEmailAddress = getLoginEmailAddress();
         TextView loginInformation = (TextView)findViewById(R.id.login_email);
         if(myLoginEmailAddress != null || !myLoginEmailAddress.equals("")){
