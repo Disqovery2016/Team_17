@@ -30,14 +30,10 @@ public class BusAdapter extends ArrayAdapter<Bus> {
         super(context, 0, aBus);
     }
 
-    // Translates a particular `Book` given a position
-    // into a relevant row within an AdapterView
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
         final Bus bus = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        ViewHolder viewHolder; // view lookup cache stored in tag
+        ViewHolder viewHolder;
         if (convertView == null) {
             viewHolder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,15 +41,15 @@ public class BusAdapter extends ArrayAdapter<Bus> {
             viewHolder.ivCover = (ImageView)convertView.findViewById(R.id.ivBusCover);
             viewHolder.tvTitle = (TextView)convertView.findViewById(R.id.tvTitle);
             viewHolder.tvNoPass = (TextView)convertView.findViewById(R.id.tvNoPass);
+            viewHolder.tvTime=(TextView)convertView.findViewById(R.id.tvTime);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        // Populate the data into the template view using the data object
         viewHolder.tvTitle.setText(bus.getTitle());
         viewHolder.tvNoPass.setText(bus.getNoPass());
+        viewHolder.tvTime.setText(bus.getTime());
         Picasso.with(getContext()).load(Uri.parse(bus.getCoverUrl())).error(R.drawable.cast_ic_notification_disconnect).into(viewHolder.ivCover);
-        // Return the completed view to render on screen
         return convertView;
     }
 }

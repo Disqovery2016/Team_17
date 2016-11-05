@@ -34,7 +34,7 @@ import tech.team17.util.Utility;
 
 public class LoginActivity extends AppCompatActivity {
     private final String TAG = "LoginActivity";
-    public static final String BASE_URL = "http://app.kenalyse.io/";
+    public static final String BASE_URL = "http://192.168.42.106/";
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;

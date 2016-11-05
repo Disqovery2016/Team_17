@@ -11,7 +11,7 @@ import java.net.URLEncoder;
  */
 
 public class BusClient {
-    private static final String API_BASE_URL = "http://openbus.org/";
+    private static final String API_BASE_URL = "http://192.160.42.106/";
     private AsyncHttpClient client;
 
     public BusClient() {

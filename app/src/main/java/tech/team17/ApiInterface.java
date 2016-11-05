@@ -41,4 +41,5 @@ class LoginForm {
         this.password = password;
         this.token = token;
     }
+
 }
